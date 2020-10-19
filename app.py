@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, jsonify, make_response
+from flask import Flask, render_template, redirect, request
 
 app = Flask(__name__)
 
@@ -17,14 +17,6 @@ def save_message():
 
 @app.route('/xss')
 def view_message():
-    return render_template("view_message.html")
-
-
-@app.route('/message')
-def get_message():
-    response = make_response(str(current_message), 200)
-    response.mimetype = "text/plain"
-    return response
-
+    return render_template("view_message.html", message=current_message)
 
 app.run()

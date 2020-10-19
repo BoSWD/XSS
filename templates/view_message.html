@@ -4,19 +4,12 @@
     <title>Show message</title>
 </head>
 <body>
-    <script>
-        const request = new Request('/message');
-        fetch(request)
-          .then(response => response.text())
-          .then(text => {
-              const message = document.getElementById("message");
-              message.innerHTML = text;
-          });
-    </script>
+    {% autoescape false %}
     <h1>
         Your message
     </h1>
     <div id="message">
+        {{message}}
         <!-- Our executed message here -->
     </div>
     <br>
@@ -27,5 +20,6 @@
     <div>
         <a href="/">Back to send message form</a>
     </div>
+    {% endautoescape %}
 </body>
 </html>
