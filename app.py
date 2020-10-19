@@ -27,4 +27,4 @@ def get_message():
     return response
 
 
-app.run(debug=True)
+app.run()
