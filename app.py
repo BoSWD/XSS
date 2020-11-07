@@ -19,4 +19,6 @@ def save_message():
 def view_message():
     return render_template("view_message.html", message=current_message)
 
-app.run()
+
+if __name__ == '__main__':
+    app.run()
